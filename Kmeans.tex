@@ -13,29 +13,29 @@
 \usepackage{ dsfont }
 \usepackage{makeidx}
 \usepackage[table,xcdraw]{xcolor}
-\makeindex
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+% \makeindex
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+% \definecolor{gray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
-\lstset
-{language=Python}
+% \lstset{frame=tb,
+%   language=Java,
+%   aboveskip=3mm,
+%   belowskip=3mm,
+%   showstringspaces=false,
+%   columns=flexible,
+%   basicstyle={\small\ttfamily},
+%   numbers=none,
+%   numberstyle=\tiny\color{gray},
+%   keywordstyle=\color{blue},
+%   commentstyle=\color{dkgreen},
+%   stringstyle=\color{mauve},
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   tabsize=3
+% }
+% \lstset
+% {language=Python}
 \title{KMeans} 
 \author{Nguyễn Văn Huy} 
 \begin{document}
@@ -51,7 +51,9 @@
 \section{Phân tích toán học} % (fold)
 \label{sec:phân_tích_toán_học}
 Với dữ liệu đầu vào của thuật toán là tập hợp các điểm dữ liệu $\mathbf{X} = [\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3,...,\mathbf{x}_N]$ $\in \mathds{R}^{d\times N}$ với $\mathbf{x}_i$ (có $d$ phần tử) là một vector mang giá trị của mỗi điểm, $N$ là số lượng các vector và số lượng $K$ các nhóm cần phân loại từ các điểm dữ liệu đó với $K < N$ (vì số lượng nhóm cần phân loại không được lớn hơn số lượng các phần tử). Điều mà chúng ta cần phải làm là làm thế nào để xác định các điểm thuộc về nhóm nào một cách gắn kết nhất, ở đây để cho dễ gọi và tính toán thì chúng ta cho rằng $K$ nhóm cần phần loại được gọi là nhóm $1,2,3,..K$. Trong phần này chúng ta chỉ đề cập đến bài toán chỉ có một điểm dữ liệu thuộc vào một nhóm duy nhất.
+\\
 Ban đầu chúng ta phải có được các điểm gốc ban đầu của các nhóm có thể chọn $k$ điểm bất kì hoặc có thể lấy các điểm dữ liệu có sẵn trong tập dữ liệu ban đầu. Gọi các điểm gốc ban đầu là $\mathbf{m} = [\mathbf{m}_1,\mathbf{m}_2,\mathbf{m}_3,...,\mathbf{m}_K]$ với mỗi điểm $\mathbf{m}_k$ cũng có có $d$ các giá trị tương tự như các điểm dữ liệu $\mathbf{x}_i$. Dựa vào tập các điểm gốc $\mathbf{m}_k$ chúng ta phải xác định xem điểm $\mathbf{x}_i$ thuộc vào nhóm nào và gán nhãn cho các điểm đó bằng vector $\mathbf{y}$ trong đó $\mathbf{y}_{ij} = 0$ và $\mathbf{y}_{ik} = 1$, nghĩa là vector $\mathbf{y}$ có $K$ giá trị và vị trí ở vị trí $k$ có giá trị bằng 1 thì đồng nghĩa là vector $\mathbf{x}_i$ được gán vào nhóm $k$.
+
 % section phân_tích_toán_học (end)
 \section{Ưu và nhược điểm.} % (fold)
 \label{sec:ưu_và_nhược_điểm_}
